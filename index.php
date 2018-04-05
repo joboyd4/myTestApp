@@ -3,7 +3,7 @@
   <BODY>
     <FORM method="post" action="index.php">
       <INPUT type="text" name="variable">
-      <INPUT type="submit" value="click">
+      <INPUT type="submit" value="Submit" name="submit1">
     </FORM>
     <?php
        echo "This is John's Test AWS App<BR>";
@@ -14,7 +14,7 @@
        {
          echo "The what you wrote in the box was".$_POST["variable"];
        }
-       if(isset($_POST['submit']))
+       if(isset($_POST['submit1']))
        {
          display();
        }
