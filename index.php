@@ -1,7 +1,7 @@
 <HTML>
   <TITLE>John's Test AWS Web App</TITLE>
   <BODY>
-    <FORM method="post" action="display()">
+    <FORM method="post" action="index.php">
       <INPUT type="text" name="variable">
       <INPUT type="submit" value="click">
     </FORM>
@@ -13,6 +13,10 @@
        function display()
        {
          echo "The what you wrote in the box was".$_POST["variable"];
+       }
+       if(isset($_POST['submit']))
+       {
+         display();
        }
     ?>
 
