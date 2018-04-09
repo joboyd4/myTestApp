@@ -20,9 +20,6 @@
            $myusername = mysqli_real_escape_string($db,$_POST["username"]);
            $mypassword = mysqli_real_escape_string($db,$_POST["password"]);
 
-           echo $myusername." here it is ".$mypassword."<BR>";
-
-
            $sql = "SELECT USER_ID FROM MY_USERS WHERE USER_NAME = '$myusername' and PASSWORD = '$mypassword'";
            echo $sql."<BR>";
            $result = mysqli_query($db,$sql);
@@ -31,7 +28,9 @@
 
            $count = mysqli_num_rows($result);
 
-           echo $myusername." ".$mypassword;
+           echo $results."<BR>";
+           echo $count."<BR>";
+           echo $row."<BR>";
 
            // If result matched $myusername and $mypassword, table row must be 1 row
            if($count == 1)
