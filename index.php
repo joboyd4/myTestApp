@@ -46,7 +46,7 @@
     ?>
 
     <?php
-       echo "<H1>This is a test of adding a php function to a form post</H1><BR>";
+       echo "<H1>This is a test of adding a php function to a form post</H1><BR><BR><BR><BR>";
 
        if(isset($_POST['formPostTest']))
        {
@@ -60,7 +60,7 @@
     </FORM>
 
     <?php
-       echo "<H1>This is a test of adding a php function to a form post</H1><BR>";
+       echo "<H1>This is a test of adding a php function to a form post</H1><BR><BR><BR><BR>";
 
        if(isset($_POST['submit2']))
        {
