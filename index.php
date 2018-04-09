@@ -20,19 +20,11 @@
            $myusername = mysqli_real_escape_string($db,$_POST["username"]);
            $mypassword = mysqli_real_escape_string($db,$_POST["password"]);
 
-           $u1 = $_POST["username"];
-           $u2 = $_POST["password"];
-
-           echo $myusername." here it is ".$mypassword;
-           echo $_POST["username"]." here it is 2 ".$_POST["password"];
+           echo $myusername." here it is ".$mypassword."<BR>";
 
 
-           $sql = "SELECT USER_ID FROM MY_USERS WHERE USER_NAME = '$u1' and PASSWORD = '$u2'";
-           echo $sql;
-           IF(!mysqli_query($db,$sql))
-           {
-             printf("Error: %s\n", $mysqli->sqlstate);
-           }
+           $sql = "SELECT USER_ID FROM MY_USERS WHERE USER_NAME = '$myusername' and PASSWORD = '$mypassword'";
+           echo $sql."<BR>";
            $result = mysqli_query($db,$sql);
            $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
            $active = $row['active'];
@@ -46,13 +38,10 @@
            {
              session_register("myusername");
              $_SESSION['login_user'] = $myusername;
-
-             header("location: welcome.php");
              echo "You are logged in";
            }
            else
            {
-             $error = "Your Login Name or Password is invalid";
              echo "There was an error and you are not logged in";
            }
          }
