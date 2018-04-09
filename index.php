@@ -41,33 +41,33 @@
        }
     ?>
 
-    <?php
-       echo "<H1>This is a test of adding a php function to a form post</H1><BR>";
 
-       if(isset($_POST['formPostTest']))
-       {
-         display();
-       }
-    ?>
-
+    <H1>This is a test of adding a php function to a form post</H1><BR>
     <FORM name='formPostTestForm' method="post" action="index.php">
       <INPUT type="text" name="variable">
       <INPUT type="submit" value="Submit" name="formPostTest">
     </FORM>
-    <BR><BR>
     <?php
-       echo "<H1>This is a test of adding mySQL login with PHP</H1><BR>";
-
-       if(isset($_POST['loginTest']))
-       {
-         login();
-       }
+      if(isset($_POST['formPostTest']))
+      {
+        display();
+      }
     ?>
+    <BR><BR>
+
+     
+    <H1>This is a test of adding mySQL login with PHP</H1><BR>
     <FORM name="loginTestForm" method="post" action="index.php">
       <LABEL>UserName  :</LABEL><INPUT type="text" name="username">
       <LABEL>Password  :</LABEL><INPUT type="text" name="password">
       <INPUT type="submit" value="Submit" name="loginTest">
     </FORM>
+    <?php
+       if(isset($_POST['loginTest']))
+       {
+         login();
+       }
+    ?>
     <BR><BR>
 
   </BODY>
