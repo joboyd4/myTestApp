@@ -17,11 +17,11 @@
          {
            // username and password sent from form
 
-           $myusername = mysqli_real_escape_string($db,$_POST["username"]);
-           $mypassword = mysqli_real_escape_string($db,$_POST["password"]);
+           $myusername = mysqli_real_escape_string($connection,$_POST["username"]);
+           $mypassword = mysqli_real_escape_string($connection,$_POST["password"]);
 
            $sql = "SELECT USER_ID FROM MY_USERS WHERE USER_NAME = '$myusername' and PASSWORD = '$mypassword'";
-           $result = mysqli_query($db,$sql);
+           $result = mysqli_query($connection,$sql);
            $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
            $active = $row['active'];
 
@@ -55,7 +55,7 @@
     ?>
     <BR><BR>
 
-     
+
     <H1>This is a test of adding mySQL login with PHP</H1><BR>
     <FORM name="loginTestForm" method="post" action="index.php">
       <LABEL>UserName  :</LABEL><INPUT type="text" name="username">
