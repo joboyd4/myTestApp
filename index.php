@@ -22,6 +22,10 @@
 
            $sql = "SELECT USER_ID FROM MY_USERS WHERE username = '$myusername' and passcode = '$mypassword'";
            echo $sql
+           IF(!mysqli_query($db,$sql))
+           {
+             printf("Error: %s\n", $mysqli->sqlstate);
+           }
            $result = mysqli_query($db,$sql);
            $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
            $active = $row['active'];
