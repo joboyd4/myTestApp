@@ -34,10 +34,12 @@
              $_SESSION['login_user'] = $myusername;
 
              header("location: welcome.php");
+             echo "You are logged in";
            }
            else
            {
              $error = "Your Login Name or Password is invalid";
+             echo "There was an error and you are not logged in";
            }
          }
        }
@@ -66,8 +68,8 @@
        }
     ?>
     <FORM name="loginTestForm" method="post" action="index.php">
-      <INPUT type="text" name="username">
-      <INPUT type="text" name="password">
+      <LABEL>UserName  :</LABEL><INPUT type="text" name="username">
+      <LABEL>Password  :</LABEL><INPUT type="text" name="password">
       <INPUT type="submit" value="Submit" name="loginTest">
     </FORM>
 
