@@ -28,14 +28,9 @@
 
            $count = mysqli_num_rows($result);
 
-           echo $results."<BR>";
-           echo $count."<BR>";
-           echo $row."<BR>";
-
            // If result matched $myusername and $mypassword, table row must be 1 row
            if($count == 1)
            {
-             echo "enter login ";
              $_SESSION['login_user'] = $myusername;
              echo "You are logged in as ".$_SESSION['login_user'];
            }
