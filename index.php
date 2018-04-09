@@ -13,14 +13,15 @@
          include("config.php");
          session_start();
 
-         if(isset($_POST['loginTest']))
+         if(isset($_POST["loginTest"]))
          {
            // username and password sent from form
 
            $myusername = mysqli_real_escape_string($db,$_POST["username"]);
            $mypassword = mysqli_real_escape_string($db,$_POST["password"]);
 
-            echo $myusername." here it is ".$mypassword;
+           echo $myusername." here it is ".$mypassword;
+           echo $_POST["username"]." here it is 2".$_POST["password"];
 
 
            $sql = "SELECT USER_ID FROM MY_USERS WHERE username = '$myusername' and passcode = '$mypassword'";
