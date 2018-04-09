@@ -21,7 +21,6 @@
            $mypassword = mysqli_real_escape_string($db,$_POST["password"]);
 
            $sql = "SELECT USER_ID FROM MY_USERS WHERE USER_NAME = '$myusername' and PASSWORD = '$mypassword'";
-           echo $sql."<BR>";
            $result = mysqli_query($db,$sql);
            $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
            $active = $row['active'];
