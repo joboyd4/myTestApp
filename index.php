@@ -17,8 +17,11 @@
          {
            // username and password sent from form
 
-           $myusername = mysqli_real_escape_string($db,$_POST['username']);
-           $mypassword = mysqli_real_escape_string($db,$_POST['password']);
+           $myusername = mysqli_real_escape_string($db,$_POST["username"]);
+           $mypassword = mysqli_real_escape_string($db,$_POST["password"]);
+
+            echo $myusername." here it is ".$mypassword;
+
 
            $sql = "SELECT USER_ID FROM MY_USERS WHERE username = '$myusername' and passcode = '$mypassword'";
            echo $sql;
