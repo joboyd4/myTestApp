@@ -5,7 +5,7 @@
    //define('DB_PASSWORD', 'root123');
    //define('DB_DATABASE', 'MY_TEST_DATABASE');
    // Try and connect to the database
-   $connection = mysqli_connect(DBSERVER,$config['username'],$config['password'],$config['dbname']);
+   $connection = mysqli_connect(DB_SERVER,$config['username'],$config['password'],$config['dbname']);
 
    // If connection was not successful, handle the error
    if($connection === false) {
