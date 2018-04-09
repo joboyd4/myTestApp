@@ -27,7 +27,7 @@
            echo $_POST["username"]." here it is 2 ".$_POST["password"];
 
 
-           $sql = "SELECT USER_ID FROM MY_USERS WHERE username = '$u1' and passcode = '$u2'";
+           $sql = "SELECT USER_ID FROM MY_USERS WHERE USER_NAME = '$u1' and PASSWORD = '$u2'";
            echo $sql;
            IF(!mysqli_query($db,$sql))
            {
