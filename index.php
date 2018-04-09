@@ -27,6 +27,8 @@
 
            $count = mysqli_num_rows($result);
 
+           echo $myusername." ".$mypassword
+
            // If result matched $myusername and $mypassword, table row must be 1 row
            if($count == 1)
            {
