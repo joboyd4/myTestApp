@@ -12,11 +12,4 @@
       // Handle error - notify administrator, log to a file, show an error screen, etc.
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
    }
-
-   //$db = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_DATABASE);
-   /* check connection */
-   //IF (mysqli_connect_errno())
-   //{
-      echo "Failed to connect to MySQL: " . mysqli_connect_error();
-   //}
 ?>
