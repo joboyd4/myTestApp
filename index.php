@@ -35,9 +35,9 @@
            // If result matched $myusername and $mypassword, table row must be 1 row
            if($count == 1)
            {
-             session_register("myusername");
+             echo "enter login ";
              $_SESSION['login_user'] = $myusername;
-             echo "You are logged in";
+             echo "You are logged in as ".$_SESSION['login_user'];
            }
            else
            {
