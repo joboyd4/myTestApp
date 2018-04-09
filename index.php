@@ -46,7 +46,7 @@
     ?>
 
     <?php
-       echo "<H1>This is a test of adding a php function to a form post</H1><BR><BR><BR><BR>";
+       echo "<H1>This is a test of adding a php function to a form post</H1><BR>";
 
        if(isset($_POST['formPostTest']))
        {
@@ -58,13 +58,13 @@
       <INPUT type="text" name="variable">
       <INPUT type="submit" value="Submit" name="formPostTest">
     </FORM>
-
+    <BR><BR>
     <?php
-       echo "<H1>This is a test of adding a php function to a form post</H1><BR><BR><BR><BR>";
+       echo "<H1>This is a test of adding mySQL login with PHP</H1><BR>";
 
-       if(isset($_POST['submit2']))
+       if(isset($_POST['loginTest']))
        {
-         display();
+         login();
        }
     ?>
     <FORM name="loginTestForm" method="post" action="index.php">
@@ -72,6 +72,7 @@
       <LABEL>Password  :</LABEL><INPUT type="text" name="password">
       <INPUT type="submit" value="Submit" name="loginTest">
     </FORM>
+    <BR><BR>
 
   </BODY>
 </TITLE>
