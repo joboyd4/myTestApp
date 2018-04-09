@@ -20,11 +20,14 @@
            $myusername = mysqli_real_escape_string($db,$_POST["username"]);
            $mypassword = mysqli_real_escape_string($db,$_POST["password"]);
 
+           $u1 = $_POST["username"];
+           $u2 = $_POST["password"];
+
            echo $myusername." here it is ".$mypassword;
-           echo $_POST["username"]." here it is 2".$_POST["password"];
+           echo $_POST["username"]." here it is 2 ".$_POST["password"];
 
 
-           $sql = "SELECT USER_ID FROM MY_USERS WHERE username = '$myusername' and passcode = '$mypassword'";
+           $sql = "SELECT USER_ID FROM MY_USERS WHERE username = '$u1' and passcode = '$u2'";
            echo $sql;
            IF(!mysqli_query($db,$sql))
            {
