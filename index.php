@@ -11,7 +11,6 @@
        function createUser()
        {
          include("config.php");
-         session_start();
 
          if(isset($_POST["createUser"]))
          {
@@ -21,7 +20,7 @@
            $mypassword = mysqli_real_escape_string($connection,$_POST["password"]);
 
            $sql = "INSERT INTO MY_USERS (USER_NAME,PASSWORD) VALUES('$myusername','$mypassword')";
-           if (mysqli_query($connnection, $sql))
+           if (mysqli_query($connection, $sql))
            {
              echo "New record for ".$myusername." created successfully";
            }
