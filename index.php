@@ -52,12 +52,27 @@
            $myusername = mysqli_real_escape_string($connection,$_POST["username"]);
            $mypassword = mysqli_real_escape_string($connection,$_POST["password"]);
 
+           $sql = $connection->prepare(SELECT USER_ID FROM MY_USERS WHERE USER_NAME = :myusername);
+           $sql->execute(array('myusername' => $myusername));
+           $count=0;
+           foreach ($sql as $row)
+           {
+             $count=1;
+             $_SESSION['login_user'] = $myusername;
+             echo "You are logged in as ".$_SESSION['login_user'];
+           }
+           if ($count==0)
+           {
+             echo "There was an error and you are not logged in";
+           }
+
+           /*
            $sql = "SELECT USER_ID FROM MY_USERS WHERE USER_NAME = '$myusername' and PASSWORD = '$mypassword'";
            $result = mysqli_query($connection,$sql);
            $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
            $active = $row['active'];
 
-           $count = mysqli_num_rows($result);
+           $count = mysqli_num_rows($result); *
 
            // If result matched $myusername and $mypassword, table row must be 1 row
            if($count == 1)
@@ -68,7 +83,7 @@
            else
            {
              echo "There was an error and you are not logged in";
-           }
+           } */
          }
        }
     ?>
@@ -90,8 +105,8 @@
     <H1>This is a test of creating a mySQL login with PHP</H1><BR>
     <FORM name="createUserForm" method="post" action="index.php">
       <LABEL>UserName  :</LABEL><INPUT type="text" name="username">
-      <LABEL>Password  :</LABEL><INPUT type="password-generator" name="password">
-      <LABEL>Re-Enter Password  :</LABEL><INPUT type="password-generator" name="password2">
+      <LABEL>Password  :</LABEL><INPUT type="password" name="password">
+      <LABEL>Re-Enter Password  :</LABEL><INPUT type="password" name="password2">
       <INPUT type="submit" value="Create" name="createUser">
     </FORM>
     <?php
