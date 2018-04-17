@@ -18,15 +18,23 @@
 
            $myusername = mysqli_real_escape_string($connection,$_POST["username"]);
            $mypassword = mysqli_real_escape_string($connection,$_POST["password"]);
+           $mypassword2 = mysqli_real_escape_string($connection,$_POST["password2"]);
 
-           $sql = "INSERT INTO MY_USERS (USER_NAME,PASSWORD) VALUES('$myusername','$mypassword')";
-           if (mysqli_query($connection, $sql))
+           if ($mypassword==$mypassword2)
            {
-             echo "New record for ".$myusername." created successfully";
+             $sql = "INSERT INTO MY_USERS (USER_NAME,PASSWORD) VALUES('$myusername','$mypassword')";
+             if (mysqli_query($connection, $sql))
+             {
+               echo "New record for ".$myusername." created successfully";
+             }
+             else
+             {
+                echo "Error: " . $sql . "<br>" . mysqli_error($connection);
+             }
            }
            else
            {
-              echo "Error: " . $sql . "<br>" . mysqli_error($connection);
+             echo "Error: Your passwords do not match";
            }
          }
        }
@@ -82,7 +90,8 @@
     <H1>This is a test of creating a mySQL login with PHP</H1><BR>
     <FORM name="createUserForm" method="post" action="index.php">
       <LABEL>UserName  :</LABEL><INPUT type="text" name="username">
-      <LABEL>Password  :</LABEL><INPUT type="text" name="password">
+      <LABEL>Password  :</LABEL><INPUT type="password-generator" name="password">
+      <LABEL>Re-Enter Password  :</LABEL><INPUT type="password-generator" name="password2">
       <INPUT type="submit" value="Create" name="createUser">
     </FORM>
     <?php
@@ -96,7 +105,7 @@
     <H1>This is a test of adding mySQL login with PHP</H1><BR>
     <FORM name="loginTestForm" method="post" action="index.php">
       <LABEL>UserName  :</LABEL><INPUT type="text" name="username">
-      <LABEL>Password  :</LABEL><INPUT type="text" name="password">
+      <LABEL>Password  :</LABEL><INPUT type="password" name="password">
       <INPUT type="submit" value="Submit" name="loginTest">
     </FORM>
     <?php
