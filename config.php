@@ -11,7 +11,7 @@
       // Handle error - notify administrator, log to a file, show an error screen, etc.
       echo "Failed to connect to MySQL: " . mysqli_connect_error();
    }
-   try
+   /* try
    {
      $connection2 = new PDO("mysql:host=localhost;dbname=$config['dbname']",$config['username'], $config['password']);
      $connection2->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
@@ -20,6 +20,6 @@
    catch (PDOException $e)
    {
      echo 'Connection failed: ' . $e->getMessage();
-   }
+   }*/
 
 ?>

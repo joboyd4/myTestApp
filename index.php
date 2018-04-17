@@ -49,8 +49,6 @@
          {
            // username and password sent from form
 
-           echo $connection2;
-
            $myusername = mysqli_real_escape_string($connection,$_POST["username"]);
            $mypassword = mysqli_real_escape_string($connection,$_POST["password"]);
 
