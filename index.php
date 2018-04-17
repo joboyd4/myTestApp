@@ -89,7 +89,7 @@
     ?>
 
 
-    <H1>This is a test of adding a php function to a form post</H1><BR>
+    <H1>This is a test of adding a php function to a create a new user</H1><BR>
     <FORM name='formPostTestForm' method="post" action="index.php">
       <INPUT type="text" name="variable">
       <INPUT type="submit" value="Submit" name="formPostTest">
