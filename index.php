@@ -72,7 +72,7 @@
            $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
            $active = $row['active'];
 
-           $count = mysqli_num_rows($result); *
+           $count = mysqli_num_rows($result);
 
            // If result matched $myusername and $mypassword, table row must be 1 row
            if($count == 1)
@@ -83,7 +83,7 @@
            else
            {
              echo "There was an error and you are not logged in";
-           } 
+           }
          }
        }
     ?>
