@@ -52,7 +52,7 @@
            $myusername = mysqli_real_escape_string($connection,$_POST["username"]);
            $mypassword = mysqli_real_escape_string($connection,$_POST["password"]);
 
-           $sql = $connection->prepare(SELECT USER_ID FROM MY_USERS WHERE USER_NAME = :myusername);
+           /*$sql = $connection->prepare(SELECT USER_ID FROM MY_USERS WHERE USER_NAME = :myusername);
            $sql->execute(array('myusername' => $myusername));
            $count=0;
            foreach ($sql as $row)
@@ -64,9 +64,9 @@
            if ($count==0)
            {
              echo "There was an error and you are not logged in";
-           }
+           }*/
 
-           /*
+
            $sql = "SELECT USER_ID FROM MY_USERS WHERE USER_NAME = '$myusername' and PASSWORD = '$mypassword'";
            $result = mysqli_query($connection,$sql);
            $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
@@ -83,7 +83,7 @@
            else
            {
              echo "There was an error and you are not logged in";
-           } */
+           } 
          }
        }
     ?>
