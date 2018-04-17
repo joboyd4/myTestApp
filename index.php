@@ -13,7 +13,7 @@
          include("config.php");
          session_start();
 
-         if(isset($_POST["loginTest"]))
+         if(isset($_POST["createUser"]))
          {
            // username and password sent from form
 
@@ -21,10 +21,9 @@
            $mypassword = mysqli_real_escape_string($connection,$_POST["password"]);
 
            $sql = "INSERT INTO MY_USERS (USER_NAME,PASSWORD) VALUES('$myusername','$mypassword')";
-           $result = mysqli_query($connection,$sql);
            if (mysqli_query($connnection, $sql))
            {
-             echo "New record for ".$mysername." created successfully";
+             echo "New record for ".$myusername." created successfully";
            }
            else
            {
